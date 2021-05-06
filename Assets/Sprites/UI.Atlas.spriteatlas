@@ -31,19 +31,31 @@ SpriteAtlas:
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: 2800000, guid: 7dcedd658fec47591a508fc16916bf1b, type: 3}
-    - {fileID: 2800000, guid: a2899f803c499cb369f44c7e925795d8, type: 3}
-    totalSpriteSurfaceArea: 2048
+    - {fileID: 2800000, guid: 7914f461c630fad42ad37d252157ab76, type: 3}
+    - {fileID: 2800000, guid: b83c59b06f5141e3bb303c5d43ee5616, type: 3}
+    - {fileID: 2800000, guid: 634d1625ec2668f6781e65731a79403f, type: 3}
+    - {fileID: 2800000, guid: 39d289facbab453f8832a83774b04e4a, type: 3}
+    - {fileID: 2800000, guid: be5268e59c3b5267ba8002f103a99897, type: 3}
+    - {fileID: 2800000, guid: 800f944c2d6fc6a5fbef9779aa6b329d, type: 3}
+    totalSpriteSurfaceArea: 4644
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: a2899f803c499cb369f44c7e925795d8, type: 3}
-  - {fileID: 21300000, guid: 7dcedd658fec47591a508fc16916bf1b, type: 3}
+  - {fileID: 21300000, guid: b83c59b06f5141e3bb303c5d43ee5616, type: 3}
+  - {fileID: 21300000, guid: 7914f461c630fad42ad37d252157ab76, type: 3}
+  - {fileID: 21300000, guid: 634d1625ec2668f6781e65731a79403f, type: 3}
+  - {fileID: 21300000, guid: be5268e59c3b5267ba8002f103a99897, type: 3}
+  - {fileID: 21300000, guid: 39d289facbab453f8832a83774b04e4a, type: 3}
+  - {fileID: 21300000, guid: 800f944c2d6fc6a5fbef9779aa6b329d, type: 3}
   m_PackedSpriteNamesToIndex:
-  - Up.Arrow Icon
-  - Down.Arrow Icon
+  - Plause Icon
+  - Down Arrow Icon
+  - Play Icon
+  - Controll Button
+  - Top Arrow Icon
+  - Play Button
   m_RenderDataMap: {}
   m_Tag: UI.Atlas
   m_IsVariant: 0
