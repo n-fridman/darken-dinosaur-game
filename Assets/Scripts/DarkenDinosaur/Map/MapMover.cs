@@ -44,11 +44,15 @@ namespace DarkenDinosaur.Map
                 this.speed = Mathf.Clamp(this.speed, this.minSpeed, this.maxSpeed);
             }
         }
-        
+
         /// <summary>
         /// Game start event handler.
         /// </summary>
-        public void OnGameStart() => StartCoroutine(SpeedCounter());
+        public void OnGameStart()
+        {
+            StartCoroutine(SpeedCounter());
+            this.isPLay = true;
+        }
 
         /// <summary>
         /// Game pause event handler.
