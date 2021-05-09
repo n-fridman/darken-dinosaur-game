@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 52716520}
   - component: {fileID: 52716519}
   - component: {fileID: 52716518}
+  - component: {fileID: 52716523}
+  - component: {fileID: 52716522}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -224,6 +226,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &52716522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52716517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e33cc48431735ac920624c62ca94e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  desktopLayer: {fileID: 694307636}
+--- !u!114 &52716523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52716517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8bbb05f3118ff9f88b9d166b00e3f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mobileLayer: {fileID: 2122833569}
 --- !u!1 &102973059
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 119564128}
-  jumpForce: 1
+  jumpForce: 4.15
   detectGroundRayLenght: 0.25
   showDetectGroundRay: 1
 --- !u!50 &119564128
@@ -630,7 +658,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &119564129
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -868,10 +896,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minSpeed: 1
-  maxSpeed: 5
+  maxSpeed: 2.5
   speed: 1
-  boostSpeedPerSecond: 0
-  nonBoostSpeedTime: 0
+  boostSpeedPerSecond: 0.05
+  nonBoostSpeedTime: 5
   isPLay: 0
 --- !u!1 &519420028
 GameObject:
@@ -1032,7 +1060,7 @@ GameObject:
   m_Component:
   - component: {fileID: 694307637}
   m_Layer: 5
-  m_Name: Desctop Layer
+  m_Name: Desktop Layer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1109,7 +1137,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 826902881}
+          m_TargetAssemblyTypeName: DarkenDinosaur.InputSystem.InputManager, Assembly-CSharp
+          m_MethodName: OnJumpButtonDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &723433075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1227,6 +1271,158 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807400826}
   m_CullTransparentMesh: 1
+--- !u!1 &826902880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 826902882}
+  - component: {fileID: 826902881}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &826902881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826902880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4654ba19a38f8348fae05e23c4c744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGameStarted: 0
+  gameStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 221029964}
+        m_TargetAssemblyTypeName: DarkenDinosaur.Map.MapMover, Assembly-CSharp
+        m_MethodName: OnGameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 119564122}
+        m_TargetAssemblyTypeName: DarkenDinosaur.Player.Character, Assembly-CSharp
+        m_MethodName: OnGameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1047795168}
+        m_TargetAssemblyTypeName: DarkenDinosaur.UI.PlayButtonPresenter, Assembly-CSharp
+        m_MethodName: OnGameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1538243079}
+        m_TargetAssemblyTypeName: DarkenDinosaur.UI.TooltipsPresenter, Assembly-CSharp
+        m_MethodName: OnGameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1499963776}
+        m_TargetAssemblyTypeName: DarkenDinosaur.UI.ControlButtonsPresenter, Assembly-CSharp
+        m_MethodName: OnGameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  jumpButtonDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 119564122}
+        m_TargetAssemblyTypeName: DarkenDinosaur.Player.Character, Assembly-CSharp
+        m_MethodName: OnJumpButtonDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  crouchRunButtonDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 119564122}
+        m_TargetAssemblyTypeName: DarkenDinosaur.Player.Character, Assembly-CSharp
+        m_MethodName: OnCrouchRunButtonDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  crouchRunButtonUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 119564122}
+        m_TargetAssemblyTypeName: DarkenDinosaur.Player.Character, Assembly-CSharp
+        m_MethodName: OnCrouchRunButtonUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &826902882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826902880}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &857928343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,7 +1474,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 826902881}
+          m_TargetAssemblyTypeName: DarkenDinosaur.InputSystem.InputManager, Assembly-CSharp
+          m_MethodName: OnCrouchRunButtonDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 826902881}
+          m_TargetAssemblyTypeName: DarkenDinosaur.InputSystem.InputManager, Assembly-CSharp
+          m_MethodName: OnCrouchRunButtonUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &857928346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1404,6 +1632,7 @@ GameObject:
   - component: {fileID: 1047795167}
   - component: {fileID: 1047795166}
   - component: {fileID: 1047795165}
+  - component: {fileID: 1047795168}
   m_Layer: 5
   m_Name: Play Button
   m_TagString: Untagged
@@ -1474,7 +1703,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1047795166}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 826902881}
+        m_TargetAssemblyTypeName: DarkenDinosaur.InputSystem.InputManager, Assembly-CSharp
+        m_MethodName: OnPlayButtonDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1047795166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1513,6 +1754,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047795163}
   m_CullTransparentMesh: 1
+--- !u!114 &1047795168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047795163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a83c2871296fffdd1900268274e5fcc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playButton: {fileID: 1047795163}
 --- !u!1 &1499963774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,13 +1776,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1499963775}
+  - component: {fileID: 1499963776}
   m_Layer: 5
   m_Name: Control
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1499963775
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1550,6 +1805,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 172}
   m_SizeDelta: {x: -50, y: 202.4}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1499963776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499963774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 878ea70ff7f504c8ab4290bdd8fb0297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlButtonsContainer: {fileID: 1499963774}
 --- !u!1 &1538243077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1559,6 +1827,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1538243078}
+  - component: {fileID: 1538243079}
   m_Layer: 5
   m_Name: Tooltips
   m_TagString: Untagged
@@ -1587,6 +1856,19 @@ RectTransform:
   m_AnchoredPosition: {x: 286.25, y: -93.69998}
   m_SizeDelta: {x: 572.5, y: 195.8}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1538243079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538243077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c647a88ac4e4591a88c1041234cdc5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipsContainer: {fileID: 1538243077}
 --- !u!1 &1859489472
 GameObject:
   m_ObjectHideFlags: 0
