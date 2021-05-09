@@ -75,7 +75,7 @@ namespace DarkenDinosaur.Player
             bool isGround = this.characterMovement.IsGround();
             if (isGround)
             {
-                this.characterAnimation.SetIsGround(false);
+                this.characterAnimation.SetCrouchRun(false);
                 this.crouchRunEnd?.Invoke();
             }
         }
