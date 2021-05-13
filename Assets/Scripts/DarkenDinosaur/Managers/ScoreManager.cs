@@ -1,4 +1,5 @@
 using System.Collections;
+using DarkenDinosaur.Data;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -64,6 +65,16 @@ namespace DarkenDinosaur.Managers
         public void OnPlayerDead()
         {
             StopAllCoroutines();
+        }
+        
+        /// <summary>
+        /// Data loaded event handler.
+        /// </summary>
+        /// <param name="data">Game data</param>
+        public void OnDataLoaded(GameData data)
+        {
+            this.highScoreCount = data.highScoreCount;
+            this.highScoreChanged?.Invoke(this.highScoreCount);
         }
     }
 }
