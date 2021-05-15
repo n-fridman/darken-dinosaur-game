@@ -7,23 +7,43 @@ namespace DarkenDinosaur.InputSystem
     {
         [Header("Settings")] 
         [SerializeField] private bool isGameStarted;
+        [SerializeField] private bool isPlayerDead;
         [Space]        
         [SerializeField] private UnityEvent gameStart;
+        [SerializeField] private UnityEvent restartLevel;
         [SerializeField] private UnityEvent jumpButtonDown;
         [SerializeField] private UnityEvent crouchRunButtonDown;
         [SerializeField] private UnityEvent crouchRunButtonUp;
-
+        
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 OnPlayButtonDown();
                 OnJumpButtonDown();
+                OnRestartLevelButtonDown();
             }
             if (Input.GetKeyDown(KeyCode.DownArrow)) OnCrouchRunButtonDown();
             if (Input.GetKeyUp(KeyCode.DownArrow)) OnCrouchRunButtonUp();
         }
 
+        /// <summary>
+        /// Player dead event handler.
+        /// </summary>
+        public void OnPlayerDead() => this.isPlayerDead = true;
+
+        /// <summary>
+        /// Restart level button down event handler.
+        /// </summary>
+        public void OnRestartLevelButtonDown()
+        {
+            if (this.isPlayerDead)
+            {
+                Debug.Log("{<color=green><b>Input Log</b></color>} => [InputManager] - (<color=yellow>OnRestartLevelButtonDown</color>) -> Scene restarted.");
+                this.restartLevel?.Invoke();
+            }
+        }
+        
         /// <summary>
         /// Play button down event handler.
         /// </summary>
