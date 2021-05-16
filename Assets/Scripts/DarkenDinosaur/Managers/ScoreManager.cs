@@ -74,7 +74,6 @@ namespace DarkenDinosaur.Managers
         public void OnDataLoaded(GameData data)
         {
             this.highScoreCount = data.highScoreCount;
-            this.highScoreChanged?.Invoke(this.highScoreCount);
         }
     }
 }
