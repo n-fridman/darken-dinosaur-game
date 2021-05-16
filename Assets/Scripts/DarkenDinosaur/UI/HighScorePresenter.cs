@@ -1,3 +1,4 @@
+using DarkenDinosaur.Data;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,12 @@ namespace DarkenDinosaur.UI
         {
             if (this.highScoreText == null) this.highScoreText = GetComponent<Text>();
         }
+        
+        /// <summary>
+        /// Data loaded event handler.
+        /// </summary>
+        /// <param name="data">Game data.</param>
+        public void OnDataLoaded(GameData data) => this.highScoreText.text = $"{this.prefix} {data.highScoreCount}";
         
         /// <summary>
         /// On high score changed event handler.
