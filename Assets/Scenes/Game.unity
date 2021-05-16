@@ -467,18 +467,6 @@ MonoBehaviour:
   dead:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 344843097}
-        m_TargetAssemblyTypeName: DarkenDinosaur.Managers.PauseManager, Assembly-CSharp
-        m_MethodName: Pause
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 846176751}
         m_TargetAssemblyTypeName: DarkenDinosaur.UI.RestartTooltipsPresenter, Assembly-CSharp
         m_MethodName: OnPlayerDead
@@ -518,6 +506,18 @@ MonoBehaviour:
       - m_Target: {fileID: 826902881}
         m_TargetAssemblyTypeName: DarkenDinosaur.InputSystem.InputManager, Assembly-CSharp
         m_MethodName: OnPlayerDead
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 344843097}
+        m_TargetAssemblyTypeName: DarkenDinosaur.Managers.PauseManager, Assembly-CSharp
+        m_MethodName: Pause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -928,7 +928,7 @@ MonoBehaviour:
   loadedTemplates: []
   templatesFolderName: Templates
   templatePrefix: Template-
-  templatesCount: 4
+  templatesCount: 26
 --- !u!4 &221029963
 Transform:
   m_ObjectHideFlags: 0
@@ -956,9 +956,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c10fa2d35af4610b7657b8ea07fa271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 1
+  minSpeed: 1.5
   maxSpeed: 2.5
-  speed: 1
+  speed: 1.5
   boostSpeedPerSecond: 0.05
   nonBoostSpeedTime: 5
   isPLay: 0
@@ -1342,6 +1342,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 578916038}
         m_TargetAssemblyTypeName: DarkenDinosaur.Managers.ScoreManager, Assembly-CSharp
+        m_MethodName: OnDataLoaded
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1362147251}
+        m_TargetAssemblyTypeName: DarkenDinosaur.UI.HighScorePresenter, Assembly-CSharp
         m_MethodName: OnDataLoaded
         m_Mode: 0
         m_Arguments:
