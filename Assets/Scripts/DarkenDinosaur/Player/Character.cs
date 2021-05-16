@@ -33,6 +33,7 @@ namespace DarkenDinosaur.Player
             switch (other.gameObject.tag)
             {
                 case "Obstacle":
+                    this.characterSound.PlayDeadSound();
                     this.dead?.Invoke();
                     Debug.Log("{<color=lime><b>Character Log</b></color>} => [Character] - (<color=yellow>OnCollisionEnter2D</color>) -> Character dead.");
                     break;
