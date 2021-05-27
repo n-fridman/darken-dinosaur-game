@@ -63,6 +63,7 @@ sysinfo.txt
 
 # Game files directory
 Assets/Data/
+Assets/Data.meta
 
 # Crashlytics generated file
 crashlytics-build.properties
