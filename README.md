@@ -12,8 +12,6 @@
 
 **Darken Dinosaur** is a simple open source game created as part of a tutorial video.
 
----
-
 ## Documentation
 Documentation for **Darken Dinosaur** project. Game build with event based architecture.
 
@@ -39,8 +37,6 @@ The main game events. All events are private. Handlers are added via the inspect
 `DarkenDinosaur.Player.Character.crouchRunStart` - The event is triggered when you start running while crouching.
 
 `DarkenDinosaur.Player.Character.crouchRunEnd` - The event is triggered when you finish running in a crouch.
-
----
 
 ## License
 
