@@ -26,11 +26,15 @@ namespace DarkenDinosaur.Managers
 
         [SerializeField] private UnityEvent<GameData> dataLoaded;
         [SerializeField] private UnityEvent<GameData> dataSaved;
-
-        private void SaveDataToFile()
+        
+        /// <summary>
+        /// Restart level event handler.
+        /// </summary>
+        public void OnRestartLevel()
         {
             string json = JsonUtility.ToJson(this.gameData);
             File.WriteAllText(this.saveFilePath, json);
+            Debug.Log("{<color=blue><b>Save Manager Log</b></color>} => [SaveManager] - (<color=yellow>OnApplicationQuit</color>) -> Data saved to file.");
             this.dataSaved?.Invoke(this.gameData);
         }
         
@@ -62,20 +66,6 @@ namespace DarkenDinosaur.Managers
             }
         }
 
-        private void OnApplicationPause(bool pauseStatus)
-        {
-#if UNITY_ANDROID || UNITY_IOS
-            SaveDataToFile();
-            Debug.Log("{<color=blue><b>Save Manager Log</b></color>} => [SaveManager] - (<color=yellow>OnApplicationPause</color>) -> Data saved to file.");
-#endif
-        }
-
-        private void OnApplicationQuit()
-        {
-            SaveDataToFile();
-            Debug.Log("{<color=blue><b>Save Manager Log</b></color>} => [SaveManager] - (<color=yellow>OnApplicationQuit</color>) -> Data saved to file.");
-        }
-        
         /// <summary>
         /// High score changed event handler.
         /// </summary>
