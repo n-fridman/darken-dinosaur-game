@@ -18,6 +18,6 @@ namespace DarkenDinosaur.UI
         /// Score changed event handler.
         /// </summary>
         /// <param name="score">Score count.</param>
-        public void OnScoreChanged(int score) => this.scoreText.text = score.ToString();
+        public void OnScoreChanged(int score) => this.scoreText.text = score.ToString("0000");
     }
 }
