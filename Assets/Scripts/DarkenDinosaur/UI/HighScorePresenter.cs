@@ -29,5 +29,15 @@ namespace DarkenDinosaur.UI
         /// </summary>
         /// <param name="highScore">High score count.</param>
         public void OnHighScoreChanged(int highScore) => this.highScoreText.text = $"{this.prefix}" + highScore.ToString("0000");
+        
+        /// <summary>
+        /// Hide high score counter.
+        /// </summary>
+        public void HideHighScore() => this.gameObject.SetActive(false);
+        
+        /// <summary>
+        /// Show high score counter.
+        /// </summary>
+        public void ShopHighScore() => this.gameObject.SetActive(true);
     }
 }
