@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace DarkenDinosaur.UI
+namespace DarkenDinosaur.UI.Presenters.Menu
 {
-    [AddComponentMenu("Darken Dinosaur/UI/Main Menu Presenter")]
+    [AddComponentMenu("Darken Dinosaur/UI/Presenters/Menu/Main Menu Presenter")]
     public class MainMenuPresenter : MonoBehaviour
     {
         [Header("Modules")] 
