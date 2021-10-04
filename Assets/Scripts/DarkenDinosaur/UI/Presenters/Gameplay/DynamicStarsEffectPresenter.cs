@@ -1,7 +1,8 @@
 using UnityEngine;
 
-namespace DarkenDinosaur.UI
+namespace DarkenDinosaur.UI.Presenters.Gameplay
 {
+    [AddComponentMenu("Darken Dinosaur/UI/Presenters/Gameplay/Dynamic Stars Effect Presenter")]
     public class DynamicStarsEffectPresenter : MonoBehaviour
     {
         [Header("Components")] 
