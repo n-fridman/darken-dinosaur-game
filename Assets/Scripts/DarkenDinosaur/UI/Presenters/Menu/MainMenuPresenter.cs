@@ -5,7 +5,7 @@ namespace DarkenDinosaur.UI.Presenters.Menu
     [AddComponentMenu("Darken Dinosaur/UI/Presenters/Menu/Main Menu Presenter")]
     public class MainMenuPresenter : MonoBehaviour
     {
-        [Header("Modules")] 
+        [Header("Components")] 
         [SerializeField] private GameObject _mainMenuContainer;
 
         /// <summary>
