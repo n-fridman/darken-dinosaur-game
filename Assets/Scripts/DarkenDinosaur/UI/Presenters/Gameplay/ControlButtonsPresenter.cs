@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace DarkenDinosaur.UI.Presenters.Gameplay
 {
+    [AddComponentMenu("Darken Dinosaur/UI/Presenters/Gameplay/Control Buttons Presenters")]
     public class ControlButtonsPresenter : MonoBehaviour
     {
         [Header("Components")] 
